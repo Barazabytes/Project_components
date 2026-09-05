@@ -2,8 +2,8 @@
  * @file led.cpp
  * @author Said Baraza (barazars45@gmail.com)
  * @brief The driver implementation.
- * @version 0.1
- * @date 2026-09-04
+ * @version 0.11
+ * @date 2026-09-05
  * 
  * @copyright Copyright (c) 2026
  * 
@@ -19,9 +19,10 @@
 Led::Led(uint8_t led) : PIN(led), LED_STATE(false) {}
 
 // LED initialization method
-void Led::led_init() {
+void Led::init() {
     pinMode(PIN, OUTPUT);
-    Serial.println("Led Configured successfully");
+    Serial.print("Led Configured GPIO: ");
+    Serial.println(PIN);
     delay(100);
 }
 
